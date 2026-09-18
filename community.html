@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community | Shri Bageshwar Dham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #f2570c; --brand-hover: #e14f0a; --sand-50: #fffbf5; --sand-100: #fbf2e6;
+      --surface-page: #fffcf9; --ink-900: #2a1a10; --ink-800: #3e2a1b; --ink-700: #5a4435; --ink-600: #786152; --ink-500: #998470;
+      --font-body: "Mulish", system-ui, sans-serif; --font-display: "Marcellus", Georgia, serif;
+      --radius-pill: 999px; --radius-xl: 24px; --shadow-sm: 0 2px 8px #43180f12;
+    }
+    * { box-sizing: border-box; }
+    body { font-family: var(--font-body); color: var(--ink-700); background: var(--surface-page); margin: 0; }
+    h1,h2,h3,h4 { font-family: var(--font-display); color: var(--ink-900); font-weight: 400; }
+    .top-bar { background: var(--sand-100); font-size: 0.8125rem; padding: 9px 0; border-bottom: 1px solid #2a1a101a; }
+    .top-bar a { color: var(--ink-700); text-decoration: none; }
+    .top-bar .lang a.active { font-weight: 700; color: var(--ink-900); }
+    .social-icon { width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; border: 1px solid #2a1a1029; margin-left: 5px; }
+    .social-icon img { width: 14px; height: 14px; }
+    .navbar-main { background: #fff; box-shadow: var(--shadow-sm); padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
+    .navbar-main .navbar-brand img { height: 52px; }
+    .navbar-main .nav-link { font-weight: 500; font-size: 0.9375rem; color: var(--ink-800) !important; padding: 0.5rem 0.85rem !important; }
+    .navbar-main .nav-link:hover { color: var(--brand) !important; }
+    .btn-donate { background: var(--brand); color: #fff !important; border: none; border-radius: var(--radius-pill); padding: 9px 22px !important; font-weight: 600; }
+    .btn-donate:hover { background: var(--brand-hover); color: #fff !important; }
+    .btn-brand { background: var(--brand); color: #fff; border: none; border-radius: var(--radius-pill); padding: 11px 26px; font-weight: 600; }
+    .btn-brand:hover { background: var(--brand-hover); color: #fff; }
+    .page-hero { background: linear-gradient(135deg, #2a0e07, #5a1d0a); color: #fff; padding: 80px 0 60px; text-align: center; }
+    .page-hero .eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #d69a3a; margin-bottom: 12px; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 2.8rem); color: #fff; }
+    .section-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 1.2rem; }
+    .info-box { background: #fff; border-radius: var(--radius-xl); padding: 28px; box-shadow: var(--shadow-sm); border: 1px solid #2a1a100d; height: 100%; }
+    footer { background: #fbf2e6; color: var(--ink-700); padding: 65px 0 28px; }
+    footer h6 { color: var(--ink-900); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.06em; margin-bottom: 18px; text-transform: uppercase; }
+    footer a { color: var(--ink-600); text-decoration: none; display: block; margin-bottom: 8px; font-size: 0.9rem; }
+    footer a:hover { color: var(--brand); }
+    .footer-bottom { border-top: 1px solid #e8d9c4; margin-top: 40px; padding-top: 22px; font-size: 0.82rem; color: var(--ink-500); }
+
+    /* ===== Animations ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .page-hero { animation: fadeIn 0.7s ease both; }
+    .page-hero .eyebrow { animation: fadeUp 0.6s ease 0.15s both; }
+    .page-hero h1 { animation: fadeUp 0.7s ease 0.25s both; }
+    .page-hero p { animation: fadeUp 0.7s ease 0.4s both; }
+    .anim { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .anim.visible { opacity: 1; transform: translateY(0); }
+    .anim-delay-1 { transition-delay: 0.1s; }
+    .anim-delay-2 { transition-delay: 0.2s; }
+    .anim-delay-3 { transition-delay: 0.3s; }
+    .anim-delay-4 { transition-delay: 0.4s; }
+    .anim-scale { opacity: 0; transform: scale(0.94); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .anim-scale.visible { opacity: 1; transform: scale(1); }
+    .navbar-main { animation: fadeIn 0.5s ease both; }
+    .info-box, .seva-card, .reach-card, .sch-card, .glance-card, .timeline-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .info-box:hover, .seva-card:hover, .reach-card:hover, .sch-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(67,24,15,0.12);
+    }
+    .btn-brand, .btn-donate {
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-brand:hover, .btn-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(242,87,12,0.35);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-none d-md-block">दिव्य दरबार · प्रत्येक मंगलवार एवं शनिवार · सभी के लिए निःशुल्क प्रवेश</div>
+      <div class="d-flex align-items-center">
+        <div class="lang me-3"><a href="#">EN</a><span class="mx-1 text-muted">|</span><a href="#" class="active">हिं</a></div>
+        <a href="https://www.youtube.com/@bageshwardhamsarkar" class="social-icon" target="_blank"><img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/youtube.svg" alt="YT"></a>
+        <a href="https://www.facebook.com/bageshwardhamsarkarofficial" class="social-icon" target="_blank"><img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/facebook.svg" alt="FB"></a>
+        <a href="https://www.instagram.com/iambageshwardhamsarkar/" class="social-icon" target="_blank"><img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/instagram.svg" alt="IG"></a>
+        <a href="https://x.com/bageshwardham" class="social-icon" target="_blank"><img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/twitter-x.svg" alt="X"></a>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-main">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="bageshwar-dham-home-animated.html">
+        <img src="https://bageshwardhamsarkar.com/home2-assets/assets/logo-v2.png" alt="बागेश्वर धाम">
+        <div class="d-none d-sm-block lh-1">
+          <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--brand);">बागेश्वर धाम</div>
+          <div style="font-size:0.62rem;letter-spacing:0.12em;color:var(--ink-500);margin-top:2px;">SARKAR · CHHATARPUR</div>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">The Dham</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="about-dham.html">About Dham</a></li>
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="how-to-reach.html">How to Reach</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Guruji</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="about-guruji.html">About Guruji</a></li>
+              <li><a class="dropdown-item" href="schedule.html">Schedule</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Experience</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="darshan.html">Darshan</a></li>
+              <li><a class="dropdown-item" href="apply-arzi.html">Apply Arzi</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="teachings.html">Teachings</a></li>
+          <li class="nav-item"><a class="nav-link" href="seva.html">Seva</a></li>
+          <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+          <li class="nav-item"><a class="nav-link" href="live.html">Live</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-donate" href="donate.html">दान करें</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">समुदाय</p>
+      <h1>आप धाम में सिर्फ आते नहीं, इस धाम का हिस्सा बन जाते हैं</h1>
+      <p class="mx-auto mt-2" style="max-width:640px;opacity:0.9;">बागेश्वर धाम उन लोगों का निरंतर बढ़ता परिवार है, जो एक ही श्रद्धा और सेवा की भावना से बँधे हैं।</p>
+    </div>
+  </section>
+
+    <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow">सनातन आंदोलन</p>
+        <h2 class="section-title">लोगों को साथ लाने वाला एक आंदोलन</h2>
+        <p class="mx-auto" style="max-width:720px;line-height:1.85;">
+          बागेश्वर धाम एक स्थान से कहीं अधिक है — यह उन लोगों का निरंतर बढ़ता परिवार है, जो एक ही श्रद्धा और सेवा की भावना से बँधे हैं। गुरुजी के मार्गदर्शन में यह धाम के सत्संगों से बढ़कर एक ऐसा आंदोलन बन गया है, जो भारत और उससे परे तक पहुँचता है।
+        </p>
+        <p class="mx-auto mt-2" style="max-width:720px;line-height:1.85;color:var(--ink-600);">
+          समुदाय के मर्म में एक सरल उद्देश्य है — लोगों को सनातन धर्म के मूल्यों में एक करना, और करुणा तथा सेवा को रोज़मर्रा के जीवन में ले जाना।
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="info-box h-100">
+            <h5 class="mb-3">सनातन मठ · Sanatan Math</h5>
+            <p style="line-height:1.8;color:var(--ink-700);">A Sanatan Math is not merely a branch office — it is a complete spiritual and service centre that carries the full energy, practices and mission of Bageshwar Dham Sarkar to a new location. A place for darshan, guidance, bhajan and seva, connecting devotees to the mother Dham in Gadha even when far from Chhatarpur.</p>
+            <p style="line-height:1.8;color:var(--ink-700);">Each Math houses Shri Hanuman Balaji, conducts regular satsangs and pravachans, and serves the surrounding community through charitable activities.</p>
+            <ul style="line-height:1.9;margin-bottom:0;">
+              <li><strong>Mumbai Sanatan Math</strong> — 14 Apr 2025 · First Dham outside Madhya Pradesh</li>
+              <li><strong>Fiji Math</strong> — Bhoomipujan 13 Jun 2025 · For the Hindu community of Fiji and the Pacific</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-box h-100">
+            <h5 class="mb-3">पदयात्रा · Padayatra</h5>
+            <p style="line-height:1.8;color:var(--ink-700);">एकता और भक्ति की भावना में, अनेक किलोमीटर की एक पदयात्रा। 2025 की पदयात्रा दिल्ली से वृंदावन की ओर चली, जिसमें मार्ग भर हज़ारों लोग सम्मिलित हुए।</p>
+            <p style="line-height:1.8;color:var(--ink-700);margin-bottom:0;">Such yatras strengthen the bond of the sangat and take the message of Sanatan and Seva to the streets and hearts of the people.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="info-box">
+            <h5 class="mb-3">स्वयंसेवा · Volunteer</h5>
+            <p style="line-height:1.8;color:var(--ink-700);">समुदाय सेवा में अपने सर्वोत्तम रूप में होता है। धाम की सेवा में अपना समय और हाथ अर्पित कीजिए — अन्नपूर्णा रसोई में, आयोजनों में, या अपने शहर में। Volunteers are the heartbeat of every Seva at the Dham.</p>
+            <a href="seva.html" class="fw-semibold" style="color:var(--brand);">Seva pages →</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-box">
+            <h5 class="mb-3">Voices from the Sangat</h5>
+            <p style="line-height:1.7;font-style:italic;color:var(--ink-700);">“I came with no hope and left with a family. The seva at the Dham changed how I live.”</p>
+            <p class="small mb-2" style="color:var(--ink-500);">— Volunteer, Chhatarpur</p>
+            <p style="line-height:1.7;font-style:italic;color:var(--ink-700);">“Even abroad, the daily darshan keeps us connected. The Dham feels close, every morning.”</p>
+            <p class="small mb-0" style="color:var(--ink-500);">— Devotees, Fiji</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://www.youtube.com/@bageshwardhamsarkar" target="_blank" class="btn btn-brand me-2">Follow on YouTube</a>
+        <a href="https://www.instagram.com/iambageshwardhamsarkar/" target="_blank" class="btn btn-outline-dark rounded-pill px-4">Instagram</a>
+        <a href="seva.html" class="btn btn-outline-dark rounded-pill ms-2 px-4">Join Seva →</a>
+      </div>
+    </div>
+  </section>
+<footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="https://bageshwardhamsarkar.com/home2-assets/assets/logo-v2.png" alt="Logo" style="height:44px;">
+            <div>
+              <div style="font-family:var(--font-display);color:var(--ink-900);font-size:1.15rem;">बागेश्वर धाम</div>
+              <div style="font-size:0.65rem;letter-spacing:0.1em;color:var(--ink-500);">SARKAR · CHHATARPUR</div>
+            </div>
+          </div>
+          <p class="small mb-2">ग्राम गढ़ा, पोस्ट गंज, जिला छतरपुर, मध्य प्रदेश 471105</p>
+          <p class="small mb-1"><i class="bi bi-telephone me-2"></i>+91 80711 74768</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>info@bageshwardhamsarkar.com</p>
+        </div>
+        <div class="col-6 col-lg-2"><h6>The Dham</h6><a href="about-dham.html">About</a><a href="history.html">History</a><a href="how-to-reach.html">How to Reach</a></div>
+        <div class="col-6 col-lg-2"><h6>Seva</h6><a href="seva.html">Annapurna Rasoi</a><a href="seva.html">Kanya Vivah</a><a href="seva.html">Cancer Hospital</a></div>
+        <div class="col-6 col-lg-2"><h6>Teachings</h6><a href="teachings.html">Kathas</a><a href="live.html">Videos</a></div>
+        <div class="col-6 col-lg-2"><h6>Support</h6><a href="donate.html">दान करें</a></div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+        <span>© 2026 Shri Bageshwar Dham Sarkar. All rights reserved.</span>
+        <span>UPI · Bank transfer · 80G receipt available</span>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    (function() {
+      const els = document.querySelectorAll('.anim, .anim-scale, .info-box, .seva-card, .reach-card, .sch-card, .glance-card, .timeline-item, .section-title, .section-eyebrow');
+      els.forEach(function(el) {
+        if (!el.classList.contains('anim') && !el.classList.contains('anim-scale')) {
+          el.classList.add('anim');
+        }
+      });
+      const io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.anim, .anim-scale').forEach(function(el) {
+        io.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>

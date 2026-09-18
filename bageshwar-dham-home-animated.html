@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>बागेश्वर धाम सरकार | Shri Bageshwar Dham</title>
+  <!-- Exact fonts from the original site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&family=Marcellus&family=Lora:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:wght@400;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #f2570c;
+      --brand-hover: #e14f0a;
+      --brand-press: #c2430a;
+      --saffron-500: #f2570c;
+      --maroon-700: #7c2d12;
+      --maroon-800: #5a1d0a;
+      --maroon-900: #3e1206;
+      --gold-500: #d69a3a;
+      --sand-50: #fffbf5;
+      --sand-100: #fbf2e6;
+      --sand-200: #f4e6d3;
+      --surface-page: #fffcf9;
+      --surface-sunken: #fbf2e6;
+      --ink-900: #2a1a10;
+      --ink-800: #3e2a1b;
+      --ink-700: #5a4435;
+      --ink-600: #786152;
+      --ink-500: #998470;
+      --text-body: #5a4435;
+      --text-strong: #2a1a10;
+      --text-muted: #998470;
+      --font-body: "Mulish", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --font-display: "Marcellus", "Cormorant Garamond", Georgia, serif;
+      --font-serif: "Lora", "Cormorant Garamond", Georgia, serif;
+      --font-hindi: "Tiro Devanagari Hindi", "Marcellus", serif;
+      --radius-pill: 999px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-sm: 0 2px 8px #43180f12;
+      --shadow-md: 0 8px 24px #43180f17;
+      --shadow-lg: 0 18px 48px #43180f1f;
+      --container-max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--surface-page);
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, h4, .font-display {
+      font-family: var(--font-display);
+      color: var(--text-strong);
+      font-weight: 400;
+    }
+    .font-serif { font-family: var(--font-serif); }
+    .font-hindi { font-family: var(--font-hindi); }
+
+    /* ========== TOP BAR ========== */
+    .top-bar {
+      background: var(--sand-100);
+      font-size: 0.8125rem;
+      padding: 9px 0;
+      border-bottom: 1px solid #2a1a101a;
+      color: var(--ink-700);
+    }
+    .top-bar a { color: var(--ink-700); text-decoration: none; }
+    .top-bar .lang a.active { font-weight: 700; color: var(--ink-900); }
+    .social-icon {
+      width: 30px; height: 30px;
+      display: inline-flex; align-items: center; justify-content: center;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #2a1a1029;
+      margin-left: 5px;
+      transition: all .2s;
+    }
+    .social-icon:hover { border-color: var(--brand); color: var(--brand); }
+    .social-icon img { width: 14px; height: 14px; }
+
+    /* ========== NAVBAR ========== */
+    .navbar-main {
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar-main .navbar-brand img {
+      height: 52px;
+      width: auto;
+    }
+    .navbar-main .nav-link {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 0.9375rem;
+      color: var(--ink-800) !important;
+      padding: 0.5rem 0.85rem !important;
+      letter-spacing: 0.01em;
+    }
+    .navbar-main .nav-link:hover,
+    .navbar-main .nav-link:focus {
+      color: var(--brand) !important;
+    }
+    .btn-donate {
+      background: var(--brand);
+      color: #fff !important;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 9px 22px !important;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      transition: background .2s;
+    }
+    .btn-donate:hover { background: var(--brand-hover); color: #fff !important; }
+
+    /* ========== HERO ========== */
+    .hero-section {
+      position: relative;
+      height: 88vh;
+      min-height: 580px;
+      max-height: 900px;
+      overflow: hidden;
+      border-radius: 0 0 50% 50% / 0 0 40px 40px;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--surface-page);
+      border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+      z-index: 6;
+      pointer-events: none;
+    }
+
+    /* Smooth fade transition — matches original site video */
+    .carousel-fade .carousel-item {
+      opacity: 0;
+      transition: opacity 1.15s ease-in-out;
+      position: absolute;
+      inset: 0;
+    }
+    .carousel-fade .carousel-item.active {
+      opacity: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .carousel-fade .carousel-item-next.carousel-item-start,
+    .carousel-fade .carousel-item-prev.carousel-item-end {
+      opacity: 1;
+      z-index: 1;
+    }
+    .carousel-fade .active.carousel-item-start,
+    .carousel-fade .active.carousel-item-end {
+      opacity: 0;
+      z-index: 0;
+    }
+
+    .hero-slide {
+      height: 88vh;
+      min-height: 580px;
+      max-height: 900px;
+      background-size: cover;
+      background-position: center center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Slow Ken Burns zoom motion on background — like original video */
+    .hero-slide .hero-bg {
+      position: absolute;
+      inset: -8%;
+      width: 116%;
+      height: 116%;
+      background-size: cover;
+      background-position: center center;
+      transform: scale(1);
+      transition: none;
+      will-change: transform;
+    }
+    .carousel-item.active .hero-bg {
+      animation: kenBurns 9s ease-out forwards;
+    }
+    @keyframes kenBurns {
+      0%   { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.12) translate(-1.5%, -1%); }
+    }
+    .hero-slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(2deg, rgba(0,0,0,0.55) 20%, rgba(0,0,0,0) 55%),
+                  linear-gradient(91deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 540px;
+      padding-top: 16vh;
+      /* Content fade-up on slide change */
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s ease 0.28s, transform 0.9s ease 0.28s;
+    }
+    .carousel-item.active .hero-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-tag {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.92);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 1rem;
+    }
+    .hero-tag .accent-line {
+      width: 42px;
+      height: 2.5px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4.8vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.12;
+      margin-bottom: 0.9rem;
+      color: #fff;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      font-weight: 400;
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-bottom: 1.7rem;
+      max-width: 440px;
+    }
+    .btn-hero {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 12px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background .2s, transform .2s;
+    }
+    .btn-hero:hover { background: var(--brand-hover); color: #fff; transform: translateY(-1px); }
+    .btn-outline-hero {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      border-radius: var(--radius-pill);
+      padding: 11px 26px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all .2s;
+    }
+    .btn-outline-hero:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* Carousel indicators like original */
+    .hero-indicators {
+      position: absolute;
+      bottom: 36px;
+      right: 6%;
+      left: auto;
+      display: flex;
+      gap: 18px;
+      z-index: 5;
+      margin: 0;
+    }
+    .hero-indicators button {
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      transition: all .3s ease;
+      cursor: pointer;
+    }
+    .hero-indicators button.active,
+    .hero-indicators button:hover {
+      color: #fff;
+      border-bottom-color: var(--brand);
+    }
+
+    /* ========== SCHEDULE SECTION ========== */
+    .schedule-section {
+      background: var(--sand-50);
+      padding: 70px 0 90px;
+      margin-top: -50px;
+      position: relative;
+      z-index: 10;
+    }
+    .schedule-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      min-height: 420px;
+      box-shadow: var(--shadow-md);
+    }
+    .schedule-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 420px;
+    }
+    .schedule-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 55%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px 26px;
+      color: #fff;
+    }
+    .schedule-overlay .badge-soft {
+      background: rgba(255,255,255,0.92);
+      color: var(--ink-800);
+      border-radius: var(--radius-pill);
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      align-self: flex-start;
+      margin-bottom: 12px;
+    }
+    .schedule-overlay h4 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: 26px 24px;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #2a1a100d;
+    }
+    .info-card.beige { background: #f8f1e3; }
+    .info-card.peach { background: #fceee8; }
+    .info-card .tag {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #2a1a1029;
+      border-radius: var(--radius-pill);
+      padding: 4px 13px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink-700);
+      margin-bottom: 12px;
+    }
+    .info-card h5 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--text-strong);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .info-card p { font-size: 0.9rem; color: var(--ink-600); margin: 0; line-height: 1.55; }
+
+    /* ========== ABOUT ========== */
+    .about-section {
+      padding: 100px 0 80px;
+      background: var(--surface-page);
+      text-align: centre;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-section .arch-bg {
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: min(920px, 95vw);
+      height: 640px;
+      background: url('https://bageshwardhamsarkar.com/section-images/balaji-murti.jpg') centre top/cover no-repeat;
+      opacity: 0.07;
+      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+      pointer-events: none;
+    }
+    .section-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--text-strong);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .about-murti {
+      width: min(340px, 80vw);
+      margin: 0 auto 28px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-murti img { width: 100%; display: block; }
+    .about-text {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--ink-700);
+    }
+
+    /* ========== STATS ========== */
+    .stats-section {
+      background: linear-gradient(135deg, #2a0e07, #5a1d0a);
+      color: #fff;
+      padding: 70px 0;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: #f0c987;
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+    .stat-label { font-size: 0.95rem; opacity: 0.88; }
+
+    /* ========== GURUJI ========== */
+    .guruji-section {
+      padding: 90px 0;
+      background: #faf8f5;
+    }
+    .guruji-img {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .guruji-img img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* ========== SEVA ========== */
+    .seva-section {
+      padding: 90px 0;
+      background: var(--sand-50);
+    }
+    .seva-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      transition: transform .3s, box-shadow .3s;
+      border: 1px solid #2a1a100d;
+    }
+    .seva-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .seva-card .img-wrap {
+      height: 200px;
+      overflow: hidden;
+    }
+    .seva-card .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .seva-card:hover .img-wrap img { transform: scale(1.05); }
+    .seva-card .card-body { padding: 22px 22px 26px; }
+    .seva-card h5 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .seva-card p { font-size: 0.9rem; color: var(--ink-600); line-height: 1.55; }
+    .seva-card a {
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+    .seva-card a:hover { color: var(--brand-press); }
+
+    /* ========== EVENTS ========== */
+    .events-section { padding: 80px 0; background: #fff; }
+    .event-card {
+      border: 1px solid #2a1a101a;
+      border-radius: 14px;
+      padding: 22px;
+      height: 100%;
+      transition: all .25s;
+    }
+    .event-card:hover {
+      border-color: var(--brand);
+      box-shadow: 0 10px 28px rgba(242,87,12,0.1);
+    }
+    .event-date {
+      color: var(--brand);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ========== GALLERY ========== */
+    .gallery-section {
+      padding: 80px 0;
+      background: var(--sand-50);
+    }
+    .gallery-item {
+      border-radius: 14px;
+      overflow: hidden;
+      height: 210px;
+      margin-bottom: 16px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+
+    /* ========== VIDEOS ========== */
+    .video-section {
+      padding: 80px 0;
+      background: #fcebd7;
+      color: var(--ink-800);
+    }
+    .video-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 100%;
+      transition: transform .25s, box-shadow .25s;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #2a1a100d;
+    }
+    .video-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .video-card img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+    }
+    .video-card .card-body { padding: 16px 18px; }
+    .video-card h6 { font-size: 0.92rem; line-height: 1.4; color: var(--ink-900); font-weight: 500; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #fbf2e6;
+      color: var(--ink-700);
+      padding: 65px 0 28px;
+    }
+    footer h6 {
+      color: var(--ink-900);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    footer a {
+      color: var(--ink-600);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+    footer a:hover { color: var(--brand); }
+    .footer-bottom {
+      border-top: 1px solid #e8d9c4;
+      margin-top: 40px;
+      padding-top: 22px;
+      font-size: 0.82rem;
+      color: var(--ink-500);
+    }
+
+    /* Buttons */
+    .btn-brand {
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 11px 26px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      box-shadow: 0 2px 8px rgba(242,87,12,0.25);
+    }
+    .btn-brand:hover {
+      background: var(--brand-hover);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242,87,12,0.35);
+    }
+    .btn-brand:active { transform: translateY(0); }
+
+    /* Button pulse / shine animation like original */
+    .btn-hero, .btn-donate, .btn-brand {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-hero::after, .btn-donate::after, .btn-brand::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-hero:hover::after, .btn-donate:hover::after, .btn-brand:hover::after {
+      left: 120%;
+    }
+    .btn-donate {
+      transition: all 0.3s cubic-bezier(.16,1,.3,1) !important;
+      box-shadow: 0 2px 8px rgba(242,87,12,0.25);
+    }
+    .btn-donate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(242,87,12,0.4) !important;
+    }
+    .btn-hero {
+      box-shadow: 0 2px 10px rgba(242,87,12,0.3);
+    }
+    .btn-hero:hover {
+      box-shadow: 0 8px 24px rgba(242,87,12,0.4);
+    }
+    .btn-outline-dark-soft {
+      border: 1.5px solid var(--ink-800);
+      color: var(--ink-800);
+      border-radius: var(--radius-pill);
+      padding: 9px 22px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      background: transparent;
+    }
+    .btn-outline-dark-soft:hover {
+      background: var(--ink-900);
+      color: #fff;
+    }
+
+    @media (max-width: 991.98px) {
+      .hero-content { padding-top: 10vh; }
+      .hero-indicators { right: 4%; gap: 12px; }
+      .hero-indicators button { font-size: 0.65rem; }
+      .schedule-section { margin-top: -30px; padding-top: 50px; }
+    }
+
+    /* Schedule exact layout */
+    .schedule-section { padding: 48px 0 56px; background: #fff; }
+    .sch-left {
+      position: relative; border-radius: 20px; overflow: hidden;
+      min-height: 420px; height: 100%;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .sch-left img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    .sch-left .overlay {
+      position:absolute; inset:0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 50%, transparent 70%);
+    }
+    .sch-left .content { position:absolute; bottom:0; left:0; right:0; padding:28px; color:#fff; z-index:2; }
+    .sch-badge {
+      display:inline-block; background:rgba(255,255,255,0.2); backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,0.35); color:#fff; font-size:0.78rem;
+      padding:6px 14px; border-radius:999px; margin-bottom:12px;
+    }
+    .sch-left h3 { font-family:var(--font-display); font-size:1.55rem; margin-bottom:8px; }
+    .sch-left p { font-size:0.92rem; opacity:0.9; margin:0; }
+    .sch-card {
+      border-radius:16px; padding:22px 22px 20px; height:100%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .sch-card .tag {
+      display:inline-block; font-size:0.75rem; padding:4px 12px; border-radius:999px;
+      border:1px solid rgba(0,0,0,0.08); margin-bottom:12px; color:var(--ink-600);
+    }
+    .sch-card h4 { font-family:var(--font-display); font-size:1.15rem; color:var(--ink-900); margin-bottom:8px; line-height:1.35; }
+    .sch-card p { font-size:0.88rem; color:var(--ink-600); margin:0; line-height:1.55; }
+    .sch-darbar {
+      background: #fde8d8; border-radius:16px; padding:22px;
+      display:flex; gap:16px; align-items:center; height:100%;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .sch-darbar .txt { flex:1; }
+    .sch-darbar h4 { font-family:var(--font-display); font-size:1.15rem; margin-bottom:8px; color:var(--ink-900); line-height:1.35; }
+    .sch-darbar p { font-size:0.85rem; color:var(--ink-700); margin-bottom:6px; }
+    .sch-darbar .times { font-size:0.8rem; color:var(--ink-600); line-height:1.6; }
+    .sch-darbar img {
+      width:110px; height:130px; object-fit:cover; object-position:top;
+      border-radius:12px; flex-shrink:0;
+    }
+
+    /* About arch section */
+    .about-arch {
+      position:relative; padding: 80px 0 40px;
+      background: url('https://bageshwardhamsarkar.com/api/media/file/744ff33fc7581c02bc1059fa67b611ca9a293b8a.png') center top / cover no-repeat;
+      min-height: 520px;
+    }
+    .about-arch::before {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(to bottom, transparent 0%, #fff 55%);
+    }
+    .about-arch-inner { position:relative; z-index:2; text-align:center; }
+    .about-murti {
+      max-width: 320px; margin: 24px auto 28px;
+      border-radius: 24px 24px 18px 18px;
+      overflow:hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+    }
+    .about-murti img { width:100%; display:block; }
+
+    /* Stats with temple bg feel */
+    .stats-section {
+      background: #faf6ef;
+      background-image:
+        radial-gradient(ellipse at 10% 80%, rgba(200,160,100,0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(200,160,100,0.12) 0%, transparent 50%);
+      padding: 56px 0;
+    }
+
+    /* Gallery fan stack */
+    .gallery-fan {
+      display:flex; justify-content:center; align-items:center;
+      gap: 0; perspective: 1200px; min-height: 340px; position:relative;
+    }
+    .gallery-fan .gcard {
+      width: 200px; height: 280px; border-radius: 16px; overflow:hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, z-index 0s;
+      position:relative; flex-shrink:0;
+    }
+    .gallery-fan .gcard img { width:100%; height:100%; object-fit:cover; }
+    .gallery-fan .gcard:nth-child(1) { transform: rotate(-12deg) translateY(20px); z-index:1; margin-right:-40px; }
+    .gallery-fan .gcard:nth-child(2) { transform: rotate(-5deg) translateY(8px); z-index:2; margin-right:-40px; }
+    .gallery-fan .gcard:nth-child(3) { transform: rotate(0deg) scale(1.05); z-index:5; margin-right:-40px; }
+    .gallery-fan .gcard:nth-child(4) { transform: rotate(5deg) translateY(8px); z-index:2; margin-right:-40px; }
+    .gallery-fan .gcard:nth-child(5) { transform: rotate(12deg) translateY(20px); z-index:1; }
+    .gallery-fan .gcard:hover { transform: rotate(0) scale(1.08) translateY(-8px); z-index:10; }
+
+    /* Final donate orange */
+    .donate-final {
+      background: linear-gradient(105deg, #f2570c 0%, #e04a08 100%);
+      color:#fff; padding: 56px 0;
+    }
+    .donate-final .qr-box {
+      background:#fff; border-radius:16px; padding:20px; text-align:center;
+      color:var(--ink-900); max-width:200px; margin-left:auto;
+    }
+    .donate-final .qr-box img { width:140px; height:140px; }
+
+    /* ========== SCROLL REVEAL ANIMATIONS ========== */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-on-scroll.fade-left {
+      transform: translateX(-40px);
+    }
+    .animate-on-scroll.fade-left.visible {
+      transform: translateX(0);
+    }
+    .animate-on-scroll.fade-right {
+      transform: translateX(40px);
+    }
+    .animate-on-scroll.fade-right.visible {
+      transform: translateX(0);
+    }
+    .animate-on-scroll.scale-in {
+      transform: scale(0.92);
+    }
+    .animate-on-scroll.scale-in.visible {
+      transform: scale(1);
+    }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+    .delay-6 { transition-delay: 0.6s; }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-none d-md-block">
+        दिव्य दरबार · प्रत्येक मंगलवार एवं शनिवार · सभी के लिए निःशुल्क प्रवेश
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="lang me-3">
+          <a href="#">EN</a>
+          <span class="mx-1 text-muted">|</span>
+          <a href="#" class="active">हिं</a>
+        </div>
+        <a href="https://www.youtube.com/@bageshwardhamsarkar" class="social-icon" target="_blank" rel="noopener">
+          <img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://www.facebook.com/bageshwardhamsarkarofficial" class="social-icon" target="_blank" rel="noopener">
+          <img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/facebook.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/iambageshwardhamsarkar/" class="social-icon" target="_blank" rel="noopener">
+          <img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://x.com/bageshwardham" class="social-icon" target="_blank" rel="noopener">
+          <img src="https://bageshwardhamsarkar.com/home2-assets/assets/icons/twitter-x.svg" alt="X">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-main">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <img src="https://bageshwardhamsarkar.com/home2-assets/assets/logo-v2.png" alt="बागेश्वर धाम">
+        <div class="d-none d-sm-block lh-1">
+          <div style="font-family:var(--font-display);font-size:1.25rem;color:var(--brand);font-weight:400;">बागेश्वर धाम</div>
+          <div style="font-size:0.62rem;letter-spacing:0.12em;color:var(--ink-500);margin-top:2px;">SARKAR · CHHATARPUR</div>
+        </div>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">The Dham</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="about-dham.html">About Dham</a></li>
+              <li><a class="dropdown-item" href="history.html">History</a></li>
+              <li><a class="dropdown-item" href="how-to-reach.html">How to Reach</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Guruji</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="about-guruji.html">About Guruji</a></li>
+              <li><a class="dropdown-item" href="schedule.html">Schedule</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Experience</a>
+            <ul class="dropdown-menu border-0 shadow-sm">
+              <li><a class="dropdown-item" href="darshan.html">Darshan</a></li>
+              <li><a class="dropdown-item" href="apply-arzi.html">Apply Arzi</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="teachings.html">Teachings</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="seva.html">Seva</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="community.html">Community</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="live.html">Live</a>
+          </li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-donate" href="donate.html">दान करें</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO CAROUSEL (original images) -->
+  <div id="heroCarousel" class="carousel slide carousel-fade hero-section" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
+    <div class="carousel-inner">
+
+      <!-- 1. REGISTER NOW — Oorja Sanchay (first as requested) -->
+      <div class="carousel-item active">
+        <div class="hero-slide">
+          <div class="hero-bg" style="background-image:url('oorja-hero.png');"></div>
+          <div class="container h-100 position-relative" style="z-index:2;">
+            <div class="hero-content">
+              <div class="hero-tag">Oorja Sanchay<span class="accent-line"></span></div>
+              <h1 class="hero-title">Reconnect With Yourself</h1>
+              <p class="hero-desc">Clear mental clutter, find clarity and reconnect with your inner energy.</p>
+              <a href="#" class="btn btn-hero">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. PLAN YOUR VISIT — Darshan / Balaji -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <div class="hero-bg" style="background-image:url('https://bageshwardhamsarkar.com/api/media/file/744ff33fc7581c02bc1059fa67b611ca9a293b8a.png');"></div>
+          <div class="container h-100 position-relative" style="z-index:2;">
+            <div class="hero-content">
+              <div class="hero-tag">● श्री बागेश्वर धाम लाइव आरती<span class="accent-line"></span></div>
+              <h1 class="hero-title">Come Closer to the Divine</h1>
+              <p class="hero-desc">Step into the sacred presence of Shri Balaji Maharaj, where faith brings peace and devotion finds purpose.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <a href="#" class="btn btn-hero">Plan Your Visit</a>
+                <a href="#" class="btn btn-outline-hero">Apply Arzi</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. DONATE — Kanya Vivah -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <div class="hero-bg" style="background-image:url('https://bageshwardhamsarkar.com/api/media/file/2a7f7e1925294de8b53e654574c92a00f6c61dc1.png');"></div>
+          <div class="container h-100 position-relative" style="z-index:2;">
+            <div class="hero-content">
+              <div class="hero-tag">Kanya Vivah Seva<span class="accent-line"></span></div>
+              <h1 class="hero-title">Blessing New Beginnings</h1>
+              <p class="hero-desc">Helping daughters begin a new chapter with dignity and joy.</p>
+              <a href="#" class="btn btn-hero">दान करें</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. DONATE — Annapurna / Seva -->
+      <div class="carousel-item">
+        <div class="hero-slide">
+          <div class="hero-bg" style="background-image:url('https://bageshwardhamsarkar.com/api/media/file/image%20(3).png');"></div>
+          <div class="container h-100 position-relative" style="z-index:2;">
+            <div class="hero-content">
+              <div class="hero-tag">Seva is our Sanatan<span class="accent-line"></span></div>
+              <h1 class="hero-title">Serving With Compassion</h1>
+              <p class="hero-desc">Providing care and nourishment to those in need.</p>
+              <a href="#" class="btn btn-hero">दान करें</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active">OORJA SANCHAY</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1">DARSHAN</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2">KANYA VIVAH</button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3">ANNAPURNA</button>
+    </div>
+  </div>
+
+  <!-- GURUJI SCHEDULE -->
+  <section class="schedule-section">
+    <div class="container">
+      <div class="row g-3 align-items-stretch">
+        <!-- Left big card -->
+        <div class="col-lg-5">
+          <div class="sch-left animate-on-scroll fade-left">
+            <img src="https://bageshwardhamsarkar.com/api/media/file/figma-gallery-12.jpg" alt="गुरुजी">
+            <div class="overlay"></div>
+            <div class="content">
+              <span class="sch-badge">गुरुजी का कार्यक्रम</span>
+              <h3>गुरुजी धाम पर कब रहेंगे?</h3>
+              <p>गुरुजी 26 अगस्त से 3 सितंबर तक बागेश्वर धाम में रहेंगे।</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right grid -->
+        <div class="col-lg-7">
+          <div class="row g-3 h-100">
+            <div class="col-md-6">
+              <div class="sch-card animate-on-scroll delay-1" style="background:#faf6ef;">
+                <span class="tag">कथा</span>
+                <h4>अगली कथा कब और कहाँ होगी?</h4>
+                <p>अगली कथा 4, 5 और 6 सितंबर को कोलकाता में होगी।</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="sch-card animate-on-scroll delay-2" style="background:#f3f1ed;">
+                <span class="tag">Sanatan Samagam</span>
+                <h4>When and where will the Sanatan Samagam be held?</h4>
+                <p>From September 9 to September 12, United Kingdom.</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="sch-darbar animate-on-scroll delay-3">
+                <div class="txt">
+                  <h4>धाम में अगला दिव्य दरबार कब लगेगा?</h4>
+                  <p>अगला दिव्य दरबार 26 अगस्त से 3 सितंबर तक प्रतिदिन लगेगा।</p>
+                  <div class="times">
+                    <strong>Timings:</strong><br>
+                    · दिव्य दरबार: सुबह 6:00 बजे से<br>
+                    · अभिमंत्रित विभूति वितरण एवं मंत्र हीलिंग: रात्रि 8:00 बजे से
+                  </div>
+                </div>
+                <img src="https://bageshwardhamsarkar.com/api/media/file/figma-gallery-12.jpg" alt="गुरुजी">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT DHAM -->
+  <section class="about-arch">
+    <div class="container about-arch-inner">
+      <p class="section-eyebrow mb-2 animate-on-scroll">ABOUT</p>
+      <h2 class="section-title mb-4 animate-on-scroll delay-1">Shri Bageshwar Dham</h2>
+      <div class="about-murti animate-on-scroll scale-in delay-2">
+        <img src="https://bageshwardhamsarkar.com/section-images/balaji-murti.jpg" alt="श्री बालाजी">
+      </div>
+      <p class="mx-auto animate-on-scroll delay-3" style="max-width:680px;color:var(--ink-700);line-height:1.8;font-size:1.02rem;">
+        Shri Bageshwar Dham is a sacred place devoted to Shri Hanuman Balaji where generations of devotees have come with faith and hope. Believed to be over 300 years old, the Dham welcomes thousands of people every day. With their Arzi, devotees come before Balaji Maharaj seeking his blessings, guidance and grace through Pujya Dhirendra Krishna Shastri Ji Maharaj, Shri Bageshwar Dham Sarkar.
+      </p>
+      <a href="#" class="btn btn-brand mt-3 animate-on-scroll delay-4">Learn More</a>
+    </div>
+  </section>
+
+  <!-- IMPACT INTRO + STATS -->
+  <section class="stats-section">
+    <div class="container text-center">
+      <p class="section-eyebrow mb-2 animate-on-scroll">बालाजी की कृपा की कोई सीमा नहीं</p>
+      <h2 class="section-title mb-3 animate-on-scroll delay-1" style="font-size:clamp(1.7rem,3vw,2.3rem);">बागेश्वर धाम का बढ़ता प्रभाव</h2>
+      <p class="mx-auto mb-5 animate-on-scroll delay-2" style="max-width:640px;color:var(--ink-700);line-height:1.7;">
+        हर मंगलवार और शनिवार को हजारों श्रद्धालु श्री बागेश्वर धाम आते हैं। यहाँ लोग आस्था, प्रार्थना और सेवा की भावना से जुड़ते हैं।
+      </p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="stat-num animate-on-scroll delay-1">3 Crore+</div>
+          <div class="stat-label animate-on-scroll delay-2">Free meals served to those in need</div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-num animate-on-scroll delay-2">5 करोड़+</div>
+          <div class="stat-label animate-on-scroll delay-3">सोशल मीडिया के माध्यम से जुड़े श्रद्धालु</div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-num animate-on-scroll delay-3">1,200+</div>
+          <div class="stat-label animate-on-scroll delay-4">Daughters married through Kanya Vivah</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GURUJI ABOUT -->
+  <section class="guruji-section">
+    <div class="container">
+      <div class="row align-items-center g-4 g-lg-5">
+        <div class="col-lg-5">
+          <div class="guruji-img animate-on-scroll fade-left">
+            <img src="https://bageshwardhamsarkar.com/api/media/file/hpd-guruji-namaste-white-kurta.png" alt="पं. श्री धीरेन्द्र कृष्ण शास्त्री जी">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <p class="section-eyebrow mb-2 animate-on-scroll delay-1" style="color:var(--brand);">पं. श्री धीरेन्द्र कृष्ण शास्त्री जी के बारे में</p>
+          <h2 class="section-title mb-3 animate-on-scroll delay-2" style="font-size:clamp(1.7rem,3vw,2.4rem);">पं. श्री धीरेन्द्र कृष्ण शास्त्री जी</h2>
+          <p class="animate-on-scroll delay-3" style="color:var(--ink-700);line-height:1.75;font-size:1.02rem;margin-bottom:1.1rem;">
+            पं. श्री धीरेन्द्र कृष्ण शास्त्री जी, परम पूज्य श्री संन्यासी बाबा एवं श्री दादागुरुजी की पावन आध्यात्मिक परंपरा को आगे बढ़ाते हुए अपनी आध्यात्मिक ज्ञान एवं सिद्धि के माध्यम से श्रद्धालुओं का मार्गदर्शन कर रहे हैं।
+          </p>
+          <p class="animate-on-scroll delay-4" style="color:var(--ink-700);line-height:1.75;font-size:1.02rem;margin-bottom:1.1rem;">
+            श्रीराम कथा, श्रीमद्भागवतम्, श्रीहनुमंत कथा एवं श्रीभक्तमाल कथा के माध्यम से गुरुजी लोगों में श्रद्धा, भक्ति और सनातन धर्म के प्रति गहरा जुड़ाव जागृत करते हैं। श्री बागेश्वर हनुमान जी की कृपा से गुरुजी को करोड़ों श्रद्धालु प्रेम और श्रद्धा से ‘श्री बागेश्वर धाम सरकार’ के नाम से जानते हैं।
+          </p>
+          <a href="#" class="btn btn-brand mt-2 animate-on-scroll delay-5">Read more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OORJA SANCHAY BANNER -->
+  <section class="py-5" style="background:linear-gradient(100deg,#fce7d8,#f6e6c5);">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <p class="section-eyebrow">ABOUT</p>
+          <h2 class="section-title" style="font-size:clamp(1.6rem,2.8vw,2.1rem);">ऊर्जा संचय समागम</h2>
+          <p style="color:var(--ink-700);max-width:560px;line-height:1.7;">
+            अब तक संसार में बॉडी डिटॉक्स - शरीर शुद्धि के लिए तो बहुत प्रोग्राम बने हैं, लेकिन ‘ऊर्जा संचय समागम’ माइंड डिटॉक्स - ‘बुद्धि की शुद्धि’ करने के लिए है। यह तीन दिन का सत्र होता है जिसमें परम पूज्य ‘श्री बागेश्वर धाम सरकार’ जीवन जीने की कला सिखाते हैं।
+          </p>
+          <a href="#" class="btn btn-brand">रजिस्टर करें</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEVA -->
+  <section class="seva-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title animate-on-scroll">सेवा ही सनातन है</h2>
+        <p class="mx-auto animate-on-scroll delay-1" style="max-width:620px;color:var(--ink-600);line-height:1.75;">
+          सेवा सदियों से सनातन जीवन का एक अभिन्न हिस्सा है। श्री बागेश्वर धाम में हम इसी परंपरा को आगे बढ़ाते हुए मानव सेवा, गौ सेवा और समाज सेवा के लिए निरंतर कार्यरत हैं।
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-1">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-vedic-gurukul-1.png" alt="वैदिक गुरुकुल">
+            </div>
+            <div class="card-body">
+              <h5>वैदिक गुरुकुल</h5>
+              <p>जहाँ वैदिक ज्ञान और आधुनिक शिक्षा का संगम है, ताकि सनातन संस्कृति और मूल्यों को आने वाली पीढ़ियों तक पहुँचाया जा सके।</p>
+              <a href="#">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-2">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-annapurna-rasoi-1.png" alt="माँ अन्नपूर्णा रसोई">
+            </div>
+            <div class="card-body">
+              <h5>माँ अन्नपूर्णा रसोई</h5>
+              <p>3 करोड़+ निःशुल्क भोजन जरूरतमंदों तक पहुँचाकर यह सुनिश्चित करना कि कोई भूखा न सोए।</p>
+              <a href="#">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-3">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-kanya-vivah-1.png" alt="कन्या विवाह">
+            </div>
+            <div class="card-body">
+              <h5>कन्या विवाह</h5>
+              <p>1,200+ जरूरतमंद बेटियों के विवाह का आयोजन, ताकि वे सम्मान और गरिमा के साथ अपने नए जीवन की शुरुआत कर सकें।</p>
+              <a href="#">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-1">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-cancer-hospital-1.png" alt="कैंसर अस्पताल">
+            </div>
+            <div class="card-body">
+              <h5>कैंसर अस्पताल</h5>
+              <p>जरूरतमंदों के लिए निःशुल्क कैंसर उपचार की पहल। वर्ष 2025 में प्रधानमंत्री श्री नरेंद्र मोदी जी द्वारा शिलान्यास किया गया।</p>
+              <a href="#">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-2">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-gau-seva-1.png" alt="गौ सेवा">
+            </div>
+            <div class="card-body">
+              <h5>गौ सेवा</h5>
+              <p>करुणा और श्रद्धा के साथ गौ माता की सेवा, सुरक्षा और संरक्षण का संकल्प।</p>
+              <a href="#">Learn more →</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card animate-on-scroll delay-3 d-flex align-items-center justify-content-center" style="background:linear-gradient(135deg,#f2570c,#9c3a1e);min-height:340px;">
+            <div class="text-center text-white p-4">
+              <h4 class="font-display mb-3" style="color:#fff;font-size:1.6rem;">दान करें</h4>
+              <p class="mb-3 opacity-90" style="font-size:0.95rem;">आपको यह जानने का अधिकार है कि आपका सहयोग कहाँ जाता है।</p>
+              <a href="#" class="btn btn-light rounded-pill px-4 fw-semibold">अभी दान करें →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events-section">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
+        <div>
+          <p class="section-eyebrow mb-1 animate-on-scroll">कार्यक्रम एवं कैलेंडर</p>
+          <h2 class="section-title mb-0 animate-on-scroll delay-1" style="font-size:clamp(1.6rem,2.8vw,2.1rem);">धाम में आगामी कार्यक्रम</h2>
+        </div>
+        <a href="#" class="btn btn-outline-dark-soft animate-on-scroll delay-2">सभी कार्यक्रम देखें →</a>
+      </div>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-3">
+          <div class="event-card animate-on-scroll delay-1">
+            <div class="event-date">26 जून 2026</div>
+            <h6 class="mt-2 mb-1" style="font-family:var(--font-display);font-size:1.05rem;">विदेश कार्यक्रम</h6>
+            <p class="text-muted small mb-2">इंडोनेशिया</p>
+            <a href="#" style="color:var(--brand);font-weight:600;font-size:0.88rem;text-decoration:none;">विवरण देखें →</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="event-card animate-on-scroll delay-2">
+            <div class="event-date">30 जून 2026</div>
+            <h6 class="mt-2 mb-1" style="font-family:var(--font-display);font-size:1.05rem;">कार्यक्रम</h6>
+            <p class="text-muted small mb-2">भोपाल, मध्य प्रदेश</p>
+            <a href="#" style="color:var(--brand);font-weight:600;font-size:0.88rem;text-decoration:none;">विवरण देखें →</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="event-card animate-on-scroll delay-3">
+            <div class="event-date">10 जुल॰ 2026</div>
+            <h6 class="mt-2 mb-1" style="font-family:var(--font-display);font-size:1.05rem;">ऊर्जा संचय समागम</h6>
+            <p class="text-muted small mb-2">तिरुपति बालाजी, आंध्र प्रदेश</p>
+            <a href="#" style="color:var(--brand);font-weight:600;font-size:0.88rem;text-decoration:none;">विवरण देखें →</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="event-card animate-on-scroll delay-4">
+            <div class="event-date">15 जुल॰ 2026</div>
+            <h6 class="mt-2 mb-1" style="font-family:var(--font-display);font-size:1.05rem;">दिव्य दरबार</h6>
+            <p class="text-muted small mb-2">धाम में</p>
+            <a href="#" style="color:var(--brand);font-weight:600;font-size:0.88rem;text-decoration:none;">विवरण देखें →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="py-5" style="background:var(--sand-50);">
+    <div class="container text-center">
+      <p class="section-eyebrow mb-1 animate-on-scroll">GALLERY</p>
+      <h2 class="section-title mb-4 animate-on-scroll delay-1">Moments from the Dham</h2>
+      <div class="gallery-fan mb-4 animate-on-scroll scale-in delay-2">
+        <div class="gcard"><img src="https://bageshwardhamsarkar.com/api/media/file/figma-gallery-12.jpg" alt=""></div>
+        <div class="gcard"><img src="https://bageshwardhamsarkar.com/api/media/file/2a7f7e1925294de8b53e654574c92a00f6c61dc1.png" alt=""></div>
+        <div class="gcard"><img src="https://bageshwardhamsarkar.com/api/media/file/figma-oorja-hero-arch2-1.jpg" alt=""></div>
+        <div class="gcard"><img src="https://bageshwardhamsarkar.com/api/media/file/image%20(3).png" alt=""></div>
+        <div class="gcard"><img src="https://bageshwardhamsarkar.com/section-images/balaji-murti.jpg" alt=""></div>
+      </div>
+      <a href="#" class="text-decoration-none fw-semibold animate-on-scroll delay-3" style="color:var(--brand);">View all →</a>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="video-section">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
+        <div>
+          <p class="section-eyebrow mb-1 animate-on-scroll">गुरुदेव की कथाएँ देखें</p>
+          <h2 class="section-title mb-0 animate-on-scroll delay-1" style="font-size:clamp(1.6rem,2.8vw,2.1rem);">सनातन का प्रकाश, आपके घर में</h2>
+        </div>
+        <div class="animate-on-scroll delay-2">
+          <a href="#" class="btn btn-outline-dark-soft rounded-pill me-2 px-3" style="font-size:0.9rem;">सभी वीडियो →</a>
+          <a href="#" class="btn btn-brand">सब्सक्राइब</a>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="video-card animate-on-scroll delay-1">
+            <img src="https://i.ytimg.com/vi/VqcPcpoFsmc/hqdefault.jpg" alt="Video">
+            <div class="card-body">
+              <p class="small mb-1 opacity-70">6:58</p>
+              <h6>International yoga day 2026 (Srilanka) पूज्य सरकार द्वारा संपूर्ण विश्व को योग संदेश…</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-card animate-on-scroll delay-2">
+            <img src="https://i.ytimg.com/vi/mOIQvoy_RJc/hqdefault.jpg" alt="Video">
+            <div class="card-body">
+              <p class="small mb-1 opacity-70">3:20</p>
+              <h6>श्रीलंका से मुंबई पधारने पर बागेश्वर धाम के भक्तों द्वारा भव्य स्वागत पूज्य सरकार का</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="video-card animate-on-scroll delay-3">
+            <img src="https://i.ytimg.com/vi/g-2kz0JtWZs/hqdefault.jpg" alt="Video">
+            <div class="card-body">
+              <p class="small mb-1 opacity-70">10:48</p>
+              <h6>प्रातःकाल दिव्य आरती श्री बालाजी सरकार | 22-06-2026 | Bageshwar Dham Sarkar</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <!-- GLOBAL FAITH / वैश्विक आस्था -->
+  <section class="py-5" style="background:#fff;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <p class="section-eyebrow">वैश्विक आस्था</p>
+          <h2 class="section-title" style="font-size:clamp(1.7rem,3vw,2.4rem);">दूर देशों से दिव्यता की ओर</h2>
+          <p style="color:var(--ink-700);line-height:1.8;margin-bottom:1.5rem;">
+            दुनिया के अलग-अलग कोनों से लोग आस्था और विश्वास के साथ गुरुजी के दर्शन करने, आशीर्वाद लेने और इस पावन धाम की दिव्यता को अनुभव करने बागेश्वर धाम आते हैं।
+          </p>
+          <a href="#" class="btn btn-brand">इस यात्रा से जुड़ें</a>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-2">
+            <div class="col-6">
+              <div class="rounded-3 overflow-hidden mb-2" style="height:160px;">
+                <img src="https://bageshwardhamsarkar.com/api/media/file/figma-gallery-12.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+              </div>
+              <div class="rounded-3 overflow-hidden" style="height:160px;">
+                <img src="https://bageshwardhamsarkar.com/api/media/file/2a7f7e1925294de8b53e654574c92a00f6c61dc1.png" style="width:100%;height:100%;object-fit:cover;" alt="">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="rounded-3 overflow-hidden mb-2" style="height:200px;">
+                <img src="https://bageshwardhamsarkar.com/api/media/file/figma-oorja-hero-arch2-1.jpg" style="width:100%;height:100%;object-fit:cover;" alt="">
+              </div>
+              <div class="rounded-3 overflow-hidden" style="height:120px;">
+                <img src="https://bageshwardhamsarkar.com/api/media/file/image%20(3).png" style="width:100%;height:100%;object-fit:cover;" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLLOW THE DHAM / REELS -->
+  <section class="py-5" style="background:#fff;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4">
+        <div>
+          <p class="section-eyebrow mb-1">धाम को फॉलो करें</p>
+          <h2 class="section-title mb-0" style="font-size:clamp(1.6rem,2.8vw,2.1rem);">रील्स, शॉर्ट्स और दैनिक दर्शन</h2>
+        </div>
+        <div>
+          <a href="#" class="btn btn-brand me-2">फॉलो करें</a>
+          <a href="#" class="btn btn-outline-dark-soft">सब्सक्राइब</a>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="rounded-3 overflow-hidden position-relative" style="height:280px;background:#1a1a1a;">
+            <img src="https://i.ytimg.com/vi/VqcPcpoFsmc/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.85;" alt="">
+            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+              <small class="opacity-75">IG REEL</small>
+              <div style="font-size:0.85rem;font-weight:500;">High Commissioner welcomes Gurudev</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rounded-3 overflow-hidden position-relative" style="height:280px;background:#1a1a1a;">
+            <img src="https://i.ytimg.com/vi/mOIQvoy_RJc/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.85;" alt="">
+            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+              <small class="opacity-75">YT SHORT</small>
+              <div style="font-size:0.85rem;font-weight:500;">Bhadrakali darshan · Sri Lanka</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rounded-3 overflow-hidden position-relative" style="height:280px;background:#1a1a1a;">
+            <img src="https://i.ytimg.com/vi/g-2kz0JtWZs/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.85;" alt="">
+            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+              <small class="opacity-75">IG REEL</small>
+              <div style="font-size:0.85rem;font-weight:500;">Mumbai welcome · Sri Lanka return</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rounded-3 overflow-hidden position-relative" style="height:280px;background:#1a1a1a;">
+            <img src="https://i.ytimg.com/vi/NZGRpsE3pOs/hqdefault.jpg" style="width:100%;height:100%;object-fit:cover;opacity:0.85;" alt="">
+            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+              <small class="opacity-75">YT SHORT</small>
+              <div style="font-size:0.85rem;font-weight:500;">Yoga Day glimpses · Colombo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="py-5" style="background:linear-gradient(100deg,#fce7d8,#f6e6c5);">
+    <div class="container text-center py-4">
+      <div class="animate-on-scroll" style="font-size:3rem;color:var(--brand);opacity:0.4;line-height:1;">“</div>
+      <p class="font-display mx-auto animate-on-scroll delay-1" style="max-width:720px;font-size:clamp(1.25rem,2.5vw,1.65rem);color:var(--ink-900);line-height:1.55;">
+        Just as the moon rises and gently banishes the darkness of night, so too does a saint uplift those who suffer.
+      </p>
+      <p class="mt-3 fw-semibold animate-on-scroll delay-2" style="color:var(--brand);">— Pujya Gurudev</p>
+    </div>
+  </section>
+
+  <!-- STAY CONNECTED -->
+  <section class="py-5" style="background:#fff;">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <p class="section-eyebrow">जुड़े रहें</p>
+          <h2 class="section-title" style="font-size:clamp(1.7rem,3vw,2.3rem);">अपना दिन बालाजी के साथ शुरू करें</h2>
+          <p style="color:var(--ink-700);line-height:1.7;">
+            प्रातःकालीन दर्शन और उपदेश के साथ धाम को अपनी दैनिक दिनचर्या का हिस्सा बनाएँ।
+          </p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a href="#" class="btn btn-brand">दैनिक दर्शन पाएँ</a>
+            <a href="#" class="btn btn-outline-dark-soft">यूट्यूब पर सब्सक्राइब</a>
+            <a href="#" class="btn btn-outline-dark-soft">इंस्टाग्राम पर फॉलो</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="rounded-4 overflow-hidden" style="box-shadow:var(--shadow-lg);">
+            <img src="https://bageshwardhamsarkar.com/section-images/balaji-murti.jpg" alt="Balaji" style="width:100%;display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE / TRANSPARENCY SECTION -->
+  <section class="py-5" style="background:var(--sand-50);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-eyebrow mb-2">TRANSPARENCY</p>
+        <h2 class="section-title mb-3" style="font-size:clamp(1.7rem,3vw,2.4rem);">आपको यह जानने का अधिकार है कि आपका सहयोग कहाँ जाता है</h2>
+        <p class="mx-auto" style="max-width:620px;color:var(--ink-600);line-height:1.7;">
+          बागेश्वर धाम में हर सेवा उन लोगों के सहयोग से संभव होती है जो योगदान देने का निर्णय लेते हैं। आपका दान किसी भूखे के लिए भोजन, कैंसर से जूझ रहे मरीज़ की देखभाल, बच्चे की शिक्षा या किसी बेटी के नए अध्याय की शुरुआत बन सकता है।
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Cancer Hospital -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%203.png" alt="कैंसर अस्पताल">
+            </div>
+            <div class="card-body">
+              <h5>कैंसर अस्पताल</h5>
+              <p>आपका सहयोग जरूरतमंदों को कैंसर के उपचार और देखभाल की सुविधा प्रदान करने में मदद करता है।</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Annapurna -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%206.png" alt="अन्नपूर्णा रसोई">
+            </div>
+            <div class="card-body">
+              <h5>माँ अन्नपूर्णा रसोई</h5>
+              <p>Free Food for all. No matter your religion, caste, creed, color or economic background.</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Vedic Gurukul -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%2010.png" alt="वैदिक गुरुकुल">
+            </div>
+            <div class="card-body">
+              <h5>वैदिक गुरुकुल</h5>
+              <p>आपका सहयोग युवा मनों को वैदिक एवं आधुनिक ज्ञान से समृद्ध करने में मदद करता है।</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Gau Seva -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-gau-seva-1.png" alt="गौ सेवा">
+            </div>
+            <div class="card-body">
+              <h5>गौ सेवा</h5>
+              <p>करुणा और श्रद्धा के साथ गौ माता की सेवा, सुरक्षा और संरक्षण का संकल्प।</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Kanya Vivah -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-seva-kanya-vivah-1.png" alt="कन्या विवाह">
+            </div>
+            <div class="card-body">
+              <h5>कन्या विवाह</h5>
+              <p>1,200+ जरूरतमंद बेटियों के विवाह का आयोजन, ताकि वे सम्मान और गरिमा के साथ नया जीवन शुरू कर सकें।</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+        <!-- Bageshwar Bageecha -->
+        <div class="col-md-6 col-lg-4">
+          <div class="seva-card h-100">
+            <div class="img-wrap">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Image%201.png" alt="बागेश्वर बागीचा">
+            </div>
+            <div class="card-body">
+              <h5>बागेश्वर बागीचा</h5>
+              <p>प्रकृति की रक्षा के लिए देश भर में उद्यान बनाने और पेड़ लगाने की हरित पहल।</p>
+              <a href="#">दान करें →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-brand px-5">अभी दान करें</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL DONATE CTA -->
+  <section class="donate-final">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <h2 class="font-display mb-3 animate-on-scroll" style="color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);">सेवा की इस यात्रा में हमारे साथ जुड़ें</h2>
+          <p class="mb-4 opacity-90 animate-on-scroll delay-1" style="max-width:520px;line-height:1.7;">
+            आपका छोटा-सा योगदान किसी के लिए बड़ी उम्मीद बन सकता है। आइए, मिलकर आस्था को सेवा का रूप दें और जरूरतमंदों तक सहयोग, सम्मान और सहारा पहुँचाएँ।
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4 animate-on-scroll delay-2">
+            <div class="d-flex align-items-center gap-2" style="background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 14px;">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%203.png" alt="Cancer care" style="width:48px;height:48px;object-fit:cover;border-radius:8px;">
+              <span style="font-size:0.85rem;line-height:1.35;">कैंसर उपचार एवं देखभाल</span>
+            </div>
+            <div class="d-flex align-items-center gap-2" style="background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 14px;">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%206.png" alt="Free food" style="width:48px;height:48px;object-fit:cover;border-radius:8px;">
+              <span style="font-size:0.85rem;line-height:1.35;">निःशुल्क भोजन</span>
+            </div>
+            <div class="d-flex align-items-center gap-2" style="background:rgba(255,255,255,0.15);border-radius:12px;padding:10px 14px;">
+              <img src="https://bageshwardhamsarkar.com/api/media/file/Artboard%2010.png" alt="Education" style="width:48px;height:48px;object-fit:cover;border-radius:8px;">
+              <span style="font-size:0.85rem;line-height:1.35;">वैदिक शिक्षा</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-dark rounded-pill px-4 py-2 fw-semibold animate-on-scroll delay-3">अभी दान करें →</a>
+        </div>
+        <div class="col-lg-5">
+          <div class="d-flex align-items-center justify-content-lg-end gap-4 flex-wrap animate-on-scroll fade-right delay-2">
+            <img src="https://bageshwardhamsarkar.com/api/media/file/Image%201.png" alt="Seva" style="width:140px;height:160px;object-fit:cover;border-radius:14px;">
+            <div class="qr-box">
+              <div style="font-size:0.85rem;font-weight:600;margin-bottom:8px;">Scan to offer daan</div>
+              <img src="https://bageshwardhamsarkar.com/api/media/file/figma-sevacta-qr-1.jpg" alt="QR Code" style="width:140px;height:140px;object-fit:contain;border-radius:8px;">
+              <div class="small mt-2 text-muted">UPI · Bank transfer · 80G</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="https://bageshwardhamsarkar.com/home2-assets/assets/logo-v2.png" alt="Logo" style="height:44px;">
+            <div>
+              <div style="font-family:var(--font-display);color:var(--ink-900);font-size:1.15rem;">बागेश्वर धाम</div>
+              <div style="font-size:0.65rem;letter-spacing:0.1em;color:var(--ink-500);">SARKAR · CHHATARPUR</div>
+            </div>
+          </div>
+          <p class="small mb-2">ग्राम गढ़ा, पोस्ट गंज, जिला छतरपुर, मध्य प्रदेश 471105</p>
+          <p class="small mb-1"><i class="bi bi-telephone me-2"></i>+91 80711 74768</p>
+          <p class="small"><i class="bi bi-envelope me-2"></i>info@bageshwardhamsarkar.com</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>The Dham</h6>
+          <a href="#">About</a>
+          <a href="history.html">History</a>
+          <a href="how-to-reach.html">How to Reach</a>
+          <a href="#">Gallery</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Seva</h6>
+          <a href="#">Annapurna Rasoi</a>
+          <a href="#">Kanya Vivah</a>
+          <a href="#">Gau Seva</a>
+          <a href="#">Cancer Hospital</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Teachings</h6>
+          <a href="#">Kathas</a>
+          <a href="#">Videos</a>
+          <a href="#">Books</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6>Support</h6>
+          <a href="#">दान करें</a>
+          <a href="#">Contact</a>
+          <a href="#">FAQ</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+        <span>© 2026 Shri Bageshwar Dham Sarkar. All rights reserved.</span>
+        <span>UPI · Bank transfer · 80G receipt available</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Sync custom indicators with carousel
+    const carousel = document.getElementById('heroCarousel');
+    const indicators = document.querySelectorAll('.hero-indicators button');
+    carousel.addEventListener('slid.bs.carousel', function (e) {
+      indicators.forEach(btn => btn.classList.remove('active'));
+      indicators[e.to].classList.add('active');
+    });
+    indicators.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        bsCarousel.to(i);
+      });
+    });
+
+    // Scroll reveal animations
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Optional: unobserve after reveal for performance
+          // revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
